@@ -27,6 +27,8 @@ public class Test extends Application {
 
 
         BorderPane pane = new BorderPane();
+        double x=0; double y=100;
+        System.out.println(y/x);
 
         Scene scene = new Scene(pane, 400, 400);
         scene.getStylesheets().add("style.css");
@@ -164,6 +166,12 @@ public class Test extends Application {
                 case D -> System.out.println("d");
             }
         }
+    }
+
+    public static void main(String[] args) {
+        double x = -2;
+        double y = 0;
+        System.out.println(Double.isInfinite(x/y));
     }
 
 }
