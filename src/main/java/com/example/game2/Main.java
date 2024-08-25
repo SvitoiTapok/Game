@@ -22,7 +22,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         BorderPane borderPane = new BorderPane();
         Pane pane = new Pane();
-        Scene scene = new Scene(borderPane, 1200, 1200);
+        Scene scene = new Scene(borderPane, 600, 600);
         borderPane.setCenter(pane);
         DrawMap(Map.getINSTANCE(), pane);
         Polygon triangle = new Polygon(new double[]{

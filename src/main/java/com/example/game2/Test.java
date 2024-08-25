@@ -168,10 +168,10 @@ public class Test extends Application {
         }
     }
 
-    public static void main(String[] args) {
-        double x = -2;
-        double y = 0;
-        System.out.println(Double.isInfinite(x/y));
-    }
+    //public static void main(String[] args) {
+        //    double x = -2;
+        //    double y = 0;
+        //    System.out.println(Double.isInfinite(x/y));
+        //}
 
 }
