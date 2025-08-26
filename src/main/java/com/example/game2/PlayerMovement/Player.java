@@ -89,7 +89,16 @@ public class Player {
         this.angle = angle;
         polygon.setRotate(angle);
     }
-//xPos+=cos(toRadians(angle))*step*moveMultiplier;
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "angle=" + angle +
+                ", yPos=" + yPos +
+                ", xPos=" + xPos +
+                '}';
+    }
+    //xPos+=cos(toRadians(angle))*step*moveMultiplier;
         //yPos+=sin(toRadians(angle))*step*moveMultiplier;
         //angle+=dAngle*rotationMultiplier;
 //

@@ -11,6 +11,7 @@ public class Map {
         walls.add(new Wall(200,200,200, 800));
         walls.add(new Wall(800,200,800, 800));
         walls.add(new Wall(200,800,800, 800));
+        walls.add(new Wall(200,200,800, 800));
     }
 
     public static Map getINSTANCE() {

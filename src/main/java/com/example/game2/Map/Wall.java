@@ -26,4 +26,14 @@ public class Wall {
     }
 
     public double getY2() { return y2; }
+
+    @Override
+    public String toString() {
+        return "Wall{" +
+                "x1=" + x1 +
+                ", y1=" + y1 +
+                ", x2=" + x2 +
+                ", y2=" + y2 +
+                '}';
+    }
 }

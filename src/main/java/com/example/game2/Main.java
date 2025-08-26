@@ -1,5 +1,6 @@
 package com.example.game2;
 
+import com.example.game2.Animation.SlowAnimationTimer;
 import com.example.game2.Map.Map;
 import com.example.game2.Map.Wall;
 import com.example.game2.PlayerMovement.Player;
@@ -22,7 +23,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         BorderPane borderPane = new BorderPane();
         Pane pane = new Pane();
-        Scene scene = new Scene(borderPane, 600, 600);
+        Scene scene = new Scene(borderPane, 1200, 1200);
         borderPane.setCenter(pane);
         DrawMap(Map.getINSTANCE(), pane);
         Polygon triangle = new Polygon(new double[]{
@@ -86,9 +87,17 @@ public class Main extends Application {
         //        player.setRotationMultiplier(0);
         //});
         AnimationTimer animationTimer = new AnimationTimer() {
+            private long last_update = 0;
+            private final long tick = 1_000_000_000;
+
             @Override
             public void handle(long now) {
-                playerMovement.move();
+                if(last_update==0)
+                    last_update = now;
+                if (now-last_update>tick) {
+                    playerMovement.move();
+                    last_update = now;
+                }
             }
         };
         animationTimer.start();

@@ -19,6 +19,10 @@ import javafx.stage.*;
 import javafx.util.Duration;
 
 import java.util.Random;
+import java.util.Scanner;
+
+import static java.lang.Math.*;
+
 
 public class Test extends Application {
 
@@ -173,5 +177,25 @@ public class Test extends Application {
         //    double y = 0;
         //    System.out.println(Double.isInfinite(x/y));
         //}
-
+    public static void main(String[] args) {
+        double sum=0;
+        double count = 0;
+        double angle = 2.2;
+        double vel = 6;
+        //Scanner sc = new Scanner(System.in);
+        //double angle = sc.nextDouble();
+        //double vel = sc.nextDouble();
+        while (sum<12.99){
+            double a = 90-2.2-angle;
+            double l = vel*cos(toRadians(a))*(sin(toRadians(a))-cos(toRadians(a))/26)/5;
+            System.out.println("l = " + l);
+            double vx = vel*cos(toRadians(a));
+            double v = vel+20.0/26*l;
+            angle = toDegrees(asin(vx/v));
+            System.out.println("angle = " + angle);
+            sum+=l;
+            count++;
+        }
+        System.out.println(count);
+    }
 }
